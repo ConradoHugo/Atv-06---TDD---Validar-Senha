@@ -78,10 +78,7 @@ public class ValidadorSenha {
 
         boolean valida = erros.isEmpty();
 
-        return new Resultado(valida, erros);
-        
-    
-        
-    
+        return new Resultado(valida, erros);       
     }
+    
 }

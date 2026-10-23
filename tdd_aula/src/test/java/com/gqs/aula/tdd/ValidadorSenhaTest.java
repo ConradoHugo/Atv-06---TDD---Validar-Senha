@@ -14,5 +14,15 @@ public class ValidadorSenhaTest {
     assertTrue(resultado.getErros().contains("A senha deve ter pelo menos 8 caracteres"));
 }
 
+    @Test
+    void deveExigirPeloMenosDoisDigitos() {
+        ValidadorSenha.Resultado resultado =
+
+    ValidadorSenha.validar("Senha@ab");
+
+        assertFalse(resultado.isValida());
+
+    assertTrue(resultado.getErros().contains("A senha deve conter pelo menos 2 digitos"));
+    }
 
 }

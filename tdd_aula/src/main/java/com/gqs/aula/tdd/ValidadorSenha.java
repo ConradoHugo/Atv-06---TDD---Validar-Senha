@@ -60,6 +60,22 @@ public class ValidadorSenha {
 
         }
 
+        boolean temEspecial = false;
+
+        for (int i = 0; i < senha.length(); i++) {
+                char caractere = senha.charAt(i);
+
+                if (!Character.isLetterOrDigit(caractere)) {
+                    temEspecial = true;
+                    break;
+                }
+        }
+
+        if (!temEspecial) {
+            erros.add("A senha deve conter pelo menos um caractere especial");
+
+        }
+
         boolean valida = erros.isEmpty();
 
         return new Resultado(valida, erros);

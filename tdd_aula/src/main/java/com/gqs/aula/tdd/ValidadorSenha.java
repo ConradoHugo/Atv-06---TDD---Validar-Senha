@@ -31,11 +31,22 @@ public class ValidadorSenha {
             erros.add("A senha deve ter pelo menos 8 caracteres");
         }
 
+        int quantidadeDigitos = 0;
+
+        for (int i = 0; i < senha.length(); i++) {
+            char caractere = senha.charAt(i);
+
+            if(Character.isDigit(caractere)) {
+                quantidadeDigitos++;
+            }
+        }
+
         boolean valida = erros.isEmpty();
 
         return new Resultado(valida, erros);
-
+        
+    
+        
+    
     }
-
-
 }

@@ -41,6 +41,25 @@ public class ValidadorSenha {
             }
         }
 
+        if (quantidadeDigitos < 2) {
+            erros.add("A senha deve conter pelo menos 2 digitos");
+        } 
+
+        boolean temMaiuscula = false;
+
+        for (int i = 0; i < senha.length(); i++) {
+            if(Character.isUpperCase(senha.charAt(i))){
+
+                temMaiuscula = true;
+                break;
+            }
+        }
+
+        if (!temMaiuscula) {
+            erros.add("A senha deve conter pelo menos uma letra maiuscula");
+
+        }
+
         boolean valida = erros.isEmpty();
 
         return new Resultado(valida, erros);

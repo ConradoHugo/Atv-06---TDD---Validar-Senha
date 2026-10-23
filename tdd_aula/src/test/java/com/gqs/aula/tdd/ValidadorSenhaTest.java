@@ -48,4 +48,15 @@ public class ValidadorSenhaTest {
 
     }
 
+    @Test
+    void deveAceitarSenhaValida() {
+        ValidadorSenha.Resultado resultado = 
+
+        ValidadorSenha.validar("senha@123");
+
+            assertTrue(resultado.isValida());
+
+        assertTrue(resultado.getErros().isEmpty());
+    }
+
 }
